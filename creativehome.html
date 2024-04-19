@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geekfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .carousel-img-dimensions {
+        height: 88vh;
+      }
+      .full-width-black{
+        background-color: black;
+        width: 100%;
+        min-height: 100px;
+      }
+      .carousel-container{
+        position: relative;
+      }
+      .overlap-description{
+        margin-left: -18%;
+        margin-top: -15%;
+        font-size: xx-large;
+        color: black;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+      }
+
+      .card-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+        }
+        
+        /* CSS for each card */
+        .card {
+            background-color:black;
+            color: white;
+            width: 30%;
+            height: 55vh;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .card img {
+           max-width: 50px; /* Adjust the size of the icons as needed */
+           max-height: 50px;
+}
+        /* CSS for card content */
+        .card-content {
+            text-align: left; 
+        }
+        
+        /* CSS for button */
+        .card-button {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* CSS for button hover effect */
+        .card-button:hover {
+            background-color: white;
+            color: black;
+        }
+        .border-radius {
+    border-radius: 15px; /* Rounded corners */
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+  }
+
+  .image {
+    flex: 1;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #image1 {
+    background-image: url('05.jpg'); /* Replace '01.jpg' with your image file path */
+  }
+
+  #image2 {
+    background-image: url('01.jpg'); /* Replace '02.jpg' with your image file path */
+  }
+
+  #image3 {
+    background-image: url('02.jpg'); /* Replace '05.jpg' with your image file path */
+  }
+
+  .image-middle {
+    flex: 3;
+    position: relative;
+    height: 100%;
+    background-image: url('01.jpg'); /* Replace '01.jpg' with your image file path */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .button-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+  }
+
+  .button {
+    background-color: #fff;
+    color: #000;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark mt-2 ">
+            <div class="container-fluid d-flex justify-content-between ">
+              <div>
+                <a class="navbar-brand m-4 " href="#">
+                  <img src="logo-light.png" alt="Geekfolio" style="height: 40px;"> <!-- Adjust height as needed -->
+              </a>              
+            </div>
+
+               <div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2  mb-lg-0 ">
+                      <li class="nav-item m-2 ">
+                        <a class="nav-link active text-bg-dark fw-semibold  fs-5  " aria-current="page" href="#">HOME</a>
+                      </li>
+                      <li class="nav-item m-2 ">
+                        <a class="nav-link active text-bg-dark fw-semibold  fs-5 " aria-current="page" href="#">PAGES</a>
+                      </li>
+                      <li class="nav-item m-2 ">
+                        <a class="nav-link active text-bg-dark  fw-semibold  fs-5" aria-current="page" href="#">PORTFOLIO</a>
+                      </li>
+                      <li class="nav-item m-2 ">
+                        <a class="nav-link active text-bg-dark fw-semibold fs-5 " aria-current="page" href="#">BLOGS</a>
+                      </li>
+                      <li class="nav-item m-2 ">
+                        <a class="nav-link active text-bg-dark  fw-semibold fs-5" aria-current="page" href="#">SHOP</a>
+                      </li>
+                      <li class="nav-item dropdown m-2 ">
+                        <a class="nav-link dropdown-toggle text-bg-dark fw-semibold fs-5 " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         CONTACT
+                        </a>
+                        <ul class="dropdown-menu text-black " aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+              </div>
+              </div>
+              <div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+            </div>
+            </div>
+          </nav>
+    </div>
+    
+    <div id="carouselExampleControlsNoTouching" class="carousel slide carousel-container" data-bs-touch="false" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="sample2.jpg" class="d-block w-100 carousel-img-dimensions " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="sample1.jpg" class="d-block w-100 carousel-img-dimensions " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="sample3.jpg" class="d-block w-100 carousel-img-dimensions " alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <div class="container overlap-description">
+           <div class="agency text-light ">
+            <p class="fs-5 ">Design Agency</p>
+           </div>
+           <h1 class="more font-monospace color text-white fw-bolder ">
+            More Then Just a Design Agency
+           </h1>
+           <button class="accordion-button font-monospace text-danger fs-5 ">GET STARTED</button>
+      </div>
+    </div>
+     
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="velocity9.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="velocity99.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+      
+    <div class="services-card p-5 bg-black">
+      <div>
+        <button class="service-button dot-titl border-radius bg-black text-light fs-5">FEATURED SERVICES</button><br><br><br><br>
+        <h1 class="service-heading text-light fw-bolder p-2 font-monospace ">Our Services</h1>
+      </div>
+      <p class="service-para text-lg-end text-light">Nemo enim ipsam voluptatem quia voluptas sit odit aut fugit, sed quia.</p>
+    </div>
+
+      <div class="card-container">
+        <div class="card">
+            <!-- Icon from local storage -->
+            <img src="0.png"class="mb-4 " alt="Icon 1">
+            <div class="card-bcontent">
+              <h5 class="mb-4 ">Product Design</h5>
+                <h1 class="mb-4 ">Digital Product Design</h1>
+                <p class="mb-2 ">Creating a higher spacing and how people move through a unique.</p>
+                <button class="card-button">READ MORE</button>
+            </div>
+        </div>
+        <div class="card">
+            <!-- Icon from local storage -->
+            <img src="1.png" class="mb-4 " alt="Icon 2">
+            <div class="card-content">
+                <h5 class="mb-4 ">Customs Services</h5>
+                <h1 class="mb-4 ">Branding & Design</h1>
+                <p class="mb-2 ">Creating a higher spacing and how people move through a unique.</p>
+                <button class="card-button">READ MORE</button>
+            </div>
+        </div>
+        <div class="card">
+            <!-- Icon from local storage -->
+            <img src="2.png" class="mb-4 " alt="Icon 3">
+            <div class="card-content">
+              <h5 class="mb-4 ">Product Development</h5>
+                <h1 class="mb-4 ">Web Development</h1>
+                <p class="mb-2 ">Creating a higher spacing and how people move through a unique.</p>
+                <button class="card-button">READ MORE </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="portfolioo p-5 bg-black ">
+      <div>
+        <button class="portfolio-button bg-black text-light fs-3">OUR PORTFOLIO </button><br><br><br><br>
+        <h1 class="selected-project text-light fw-bolder ">Selected Projects.</h1>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="image-container">
+        <div id="image3" class="image"></div>
+        <div class="image-middle">
+          <div class="button-container">
+            <button class="button">Button 1</button>
+            <button class="button">Button 2</button>
+          </div>
+        </div>
+        <div id="image2" class="image"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
